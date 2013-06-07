@@ -3,17 +3,13 @@
 import gzip
 import sys
 
-max_length = 2
-
-
-#filename = sys.argv[1]
+max_length = 100
 
 ctl_filename = sys.argv[1]
 
 def shorten_nbest(filename):
     assert (filename.endswith('.gz'))
     new_filename = "%s.%d.gz"%(filename[:-3], max_length)
-    print "Working on file: %s"%filename
     file = gzip.open(filename)
     new_file = gzip.open(new_filename, 'wb')
     counter = 0

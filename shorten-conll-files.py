@@ -25,7 +25,11 @@ def shorten_conll_file(filename):
             break
         new_file.write(line)
 
+counter = 0
 
 for line in open(ctl_filename):
+    counter += 1
+    if counter % 1000 == 0:
+        print "Shortened %d files."%counter
     line = line[:-1]
     shorten_conll_file(line)

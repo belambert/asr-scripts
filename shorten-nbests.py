@@ -26,7 +26,12 @@ def shorten_nbest(filename):
     file.close()
     new_file.close()
 
+counter = 0
+
 for line in open(ctl_filename):
+    counter += 1
+    if counter % 1000 == 0:
+        print "Shortened %d files."%counter
     line = line[:-1]
     shorten_nbest(line)
 

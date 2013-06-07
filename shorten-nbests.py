@@ -1,0 +1,34 @@
+#!python
+
+import gzip
+import sys
+
+max_length = 2
+
+
+#filename = sys.argv[1]
+
+ctl_filename = sys.argv[1]
+
+def shorten_nbest(filename):
+    assert (filename.endswith('.gz'))
+    new_filename = "%s.%d.gz"%(filename[:-3], max_length)
+    print "Working on file: %s"%filename
+    file = gzip.open(filename)
+    new_file = gzip.open(new_filename, 'wb')
+    counter = 0
+    for line in file:
+        new_file.write(line)
+        if not (line.startswith('#') or line.startswith('End')):
+            counter = counter + 1
+            if counter == max_length:
+                break
+    file.close()
+    new_file.close()
+
+for line in open(ctl_filename):
+    line = line[:-1]
+    shorten_nbest(line)
+
+#shorten_nbest("testing.nbest.gz")
+#shorten_nbest(filename)

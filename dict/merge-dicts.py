@@ -17,11 +17,12 @@ for dict_file in  dict_files:
     with open(dict_file) as f:
         for line in f:
             tokens = line.split()
-            word = remove_alt_pron(tokens[0])
-            word = word.lower()
-            pron = tokens[1:]
-            if pron not in dictionary[word]:
-                dictionary[word].append(pron)
+            if len(tokens) > 0:
+                word = remove_alt_pron(tokens[0])
+                word = word.lower()
+                pron = tokens[1:]
+                if pron not in dictionary[word]:
+                    dictionary[word].append(pron)
 
 
 for word in sorted(dictionary.keys()):

@@ -9,6 +9,9 @@ if argc != 3 and argc != 4:
     print "Usage: %s text_file <print_counts: y/n> [num of words]"%sys.argv[0]
     exit(-1)
 
+count_word_classes = False
+
+
 print_counts = True if sys.argv[2] == "y" else False
 if argc == 4:
     n=int(sys.argv[3])
@@ -59,16 +62,16 @@ for line in lines:
     for token in tokens:
         counts[token]+= 1
         total_count += 1
-        if token in dis:
-            counts['DISFLUENCY'] += 1
-        if token.startswith('-') or token.endswith('-'):
-            counts['PARTIAL_WORD'] += 1
-        if token.endswith('s\''):
-            counts['ES_APOSTROPHE'] += 1
-        for char in characters_to_count:
-            if char in token:
-                counts['HAS_%s'%char] += 1
-
+        if count_word_classes:
+            if token in dis:
+                counts['DISFLUENCY'] += 1
+            if token.startswith('-') or token.endswith('-'):
+                counts['PARTIAL_WORD'] += 1
+            if token.endswith('s\''):
+                counts['ES_APOSTROPHE'] += 1
+            for char in characters_to_count:
+                if char in token:
+                    counts['HAS_%s'%char] += 1
 
 counts = counts.items()
 counts = sorted(counts, key=lambda x: x[1], reverse=True)

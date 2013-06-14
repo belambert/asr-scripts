@@ -11,4 +11,4 @@ if [ $# -eq 2 ]; then
     type=$2
 fi
 
-java -Xmx2000m -cp ~/software/stanford-parser/stanford-parser.jar edu.stanford.nlp.trees.EnglishGrammaticalStructure -conllx $type -conllxFile $conll_file
+java -Xmx4000m -cp ~/software/stanford-parser/stanford-parser.jar edu.stanford.nlp.trees.EnglishGrammaticalStructure -conllx $type -conllxFile $conll_file

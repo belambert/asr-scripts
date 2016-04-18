@@ -7,7 +7,6 @@ if len(sys.argv) != 3:
     print "Usage: %s <vocab> <master dict>"%sys.argv[0]
     exit(-1)
 
-
 vocab_file = open(sys.argv[1])
 dict_file = open(sys.argv[2])
 
@@ -17,12 +16,9 @@ def remove_alt_pron_marker(str):
     return str
 
 def remove_phoneme_numbers(str):
-    #tokens = str.split()
-    #phones = tokens[1:]
     word, part, phones = str.partition(' ')
     phones = re.sub("\d", "", phones)
     return "%s %s"%(word, phones)
-    
 
 vocab = []
 
@@ -45,7 +41,3 @@ for line in dict_file:
 for word in vocab:
     if dict.get(word):
         print word
-
-
-
-

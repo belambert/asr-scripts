@@ -10,7 +10,6 @@ file=sys.argv[1]
 
 id_printed_table = {}
 id_counted_table = {}
-#trans_table = {}
 
 code_table = collections.defaultdict(int)
 
@@ -33,22 +32,10 @@ for line in open(file):
     # p (sPontaneous with verbal punctuation) |
     # e (rEad version of spontaneous with verbal punctuation )
 
-    #if id2 not in id_table and (code == 'c' or code == 's' or code == 'a' or code == 'r' ):
-    #if id2 not in id_table and (code == 'c' or code == 's' or code == 'r' ):
-
-
-    #if id2 not in id_counted_table:
     if id2 not in id_printed_table:
         id_counted_table[id2] = True
         code_table[code] += 1
 
-    #if id2 not in id_printed_table and (code == 'c' or code == 's' or code == 'r' ):
     if id2 not in id_printed_table and code == 'c' :
         id_printed_table[id2] = True
         print line
-
-
-#for key in code_table.keys():
-#for key in ['c', 's', 'a', 'r', 'o', 'p', 'e', 'z', 'X']:
-#    sys.stderr.write("%s   %d\n"%(key, code_table[key]))
-

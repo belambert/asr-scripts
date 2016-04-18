@@ -7,9 +7,6 @@ if len(sys.argv) != 2:
     print "Usage: %s <transcript file>"%os.path.basename(sys.argv[0])
     exit(1)
 
-#with open(sys.argv[1]) as f:
-#    lines = f.readlines()
-
 lines = open(sys.argv[1]).readlines()
 
 for line in lines:

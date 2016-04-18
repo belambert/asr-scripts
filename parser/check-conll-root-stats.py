@@ -8,17 +8,11 @@ line_counter = 0
 sentence_counter = 1
 lc_root_count = 0
 uc_root_count = 0
-
-
-
 total_count = 0
-
 count_single_lc_only = 0
 count_single_uc_only = 0
-
 count_multiple_lc_only = 0
 count_multiple_uc_only = 0
-
 other = 0
 
 for line in open(file):
@@ -39,9 +33,6 @@ for line in open(file):
 
         else:
             other += 1
-            #if lc_root_count != 1:
-            #    print "#LC root = %d   #UC root = %d   (line: %d, sent: %d)"%(lc_root_count, uc_root_count, line_counter, sentence_counter)
-
 
         if lc_root_count + uc_root_count != 1:
             print "#LC root = %d   #UC root = %d   (line: %d, sent: %d)"%(lc_root_count, uc_root_count, line_counter, sentence_counter)

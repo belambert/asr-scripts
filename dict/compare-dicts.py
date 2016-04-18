@@ -6,7 +6,6 @@ if len(sys.argv) != 3:
     print "Usage: %s <dict1> <dict2>"%sys.argv[0]
     exit(-1)
 
-
 dict_file1 = sys.argv[1]
 dict_file2 = sys.argv[2]
 

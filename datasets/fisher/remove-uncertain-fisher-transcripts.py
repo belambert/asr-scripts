@@ -1,18 +1,14 @@
 #!/usr/bin/python
 
-
 import sys
 import re
 
 file = sys.argv[1]
 
-#id_file = True
 id_file = False
 
+# other modes: all, strip_parens, strip_contents
 mode = "none"
-#mode = "all"
-#mode = "strip_parens"
-#mode = "strip_contents"
 
 for line in open(file):
     line = line[:-1]

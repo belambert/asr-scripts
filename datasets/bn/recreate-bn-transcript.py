@@ -10,7 +10,6 @@ ldc_file=sys.argv[2]
 f = open(ldc_file)
 lines = f.readlines()
 
-
 filename=None
 start_time=None
 end_time=None
@@ -145,33 +144,22 @@ def find_ldc_transcript(filename, start_time):
 
 not_found_count = 0
 
-#for sphinx_line in sphinx_lines[0:10]:
 for sphinx_line in sphinx_lines:
     filename = sphinx_line[0]
     start_time = sphinx_line[1]
     ldc_line = find_ldc_transcript(filename, start_time)
     if not ldc_line:
-        #print "Couldn't find transcript for %s start: %s [%s]"%(filename, start_time, sphinx_line[-1])
         not_found_count += 1
-        #assert(ldc_line)
-    #print "%10s %10s %10s"%(filename, start_time, ldc_line)
 
-    #for i in range(len(sphinx_lines) - 1):
 for i in range(len(sphinx_lines)):
-#for i in range(100):
     print "%3d (ldc) %10s %10s %s"%(i, ldc_lines[i][0], ldc_lines[i][1], ldc_lines[i][2].upper())
     print "%3d (sph) %10s %10s %s"%(i, sphinx_lines[i][0], sphinx_lines[i][1], sphinx_lines[i][-1].upper())
-
 
 for i in range(len(sphinx_lines) - 10, len(sphinx_lines)):
     print "%3d (sph) %10s %10s %s"%(i, sphinx_lines[i][0], sphinx_lines[i][1], sphinx_lines[i][-1].upper())
 
-
 for i in range(len(ldc_lines) - 10, len(ldc_lines)):
     print "%3d (ldc) %10s %10s %s"%(i, ldc_lines[i][0], ldc_lines[i][1], ldc_lines[i][2].upper())
-
-
-
 
 print "Transcripts not found: %s"%not_found_count
 

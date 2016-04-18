@@ -1,8 +1,6 @@
 #!/bin/sh
 
-#tar_bin=bsdtar
 tar_bin=tar
-
 parallel=0
 
 if [ $# -ne 0 ]; then
@@ -15,7 +13,6 @@ echo "Untarring files:"
 for file in $files; do
     echo "$file"
 done
-
 
 if [ $parallel -eq 1 ]; then
     # The "parallel" version...

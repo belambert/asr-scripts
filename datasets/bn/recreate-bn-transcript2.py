@@ -101,17 +101,3 @@ if error_token:
             print "***%3d LDC: %20s Sphinx: %20s***"%(i, ldc_tokens[i], sphinx_tokens[i])
         else:
             print "   %3d LDC: %20s Sphinx: %20s"%(i, ldc_tokens[i], sphinx_tokens[i])
-
-# We still need to :
-# * Re-order the Sphinx lines
-# * Remove silences and begin/end sentence tokens
-# * Remove disfluencies e.g. {breath} and ++BREATH++
-# * Make the case match
-#
-
-
-# LDC tokens: 1682068
-# Sphinx tokens: 2018391
-# LDC tokens: ["It's", 'a', 'question', 'that', 'will', 'make', 'a', 'lot', 'of', 'Americans']
-# Sphinx tokens: ['<s>', 'JUNIOR', 'HIGH', '<sil>', 'AND', 'HIGH', 'SCHOOL', 'YEARS', '<sil>', '++BREATH++']
-

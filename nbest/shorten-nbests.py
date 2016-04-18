@@ -4,7 +4,6 @@ import gzip
 import sys
 
 max_length = 100
-
 ctl_filename = sys.argv[1]
 
 def shorten_nbest(filename):
@@ -30,6 +29,3 @@ for line in open(ctl_filename):
         print "Shortened %d files."%counter
     line = line[:-1]
     shorten_nbest(line)
-
-#shorten_nbest("testing.nbest.gz")
-#shorten_nbest(filename)

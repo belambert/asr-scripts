@@ -5,11 +5,6 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Condition speech (auto) transcription to remove speech artifacts, including disfluencies.')
 parser.add_argument("filename", help="Transcript filename.")
-
-# group = parser.add_mutually_exclusive_group()
-# group.add_argument("-v", "--verbose", action="store_true")
-# group.add_argument("-q", "--quiet", action="store_true")
-
 parser.add_argument('-nh', '--remove-hyphen-lines', action='store_true', help='print the individual sentences and their errors')
 parser.add_argument('-hi', '--has-ids', action='store_true', help='hypothesis and reference files have ids in the last token?')
 parser.add_argument('-i', '--include-sentence-ids', action='store_true', help='print tables of which words were confused')
@@ -17,7 +12,6 @@ parser.add_argument('-d', '--dummy-token', default=None, help='token to print wh
 parser.add_argument('-min', '--min-length', default=0, type=int, help='minimum transcript length to include (in token count)')
 parser.add_argument('-max', '--max-length', default=sys.maxint, type=int, help='maximum transcrip length to include (in token count)')
 args = parser.parse_args()
-
 
 file = args.filename
 include_sentence_id = args.include_sentence_ids

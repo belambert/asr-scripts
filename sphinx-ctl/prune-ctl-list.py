@@ -9,7 +9,6 @@ if len(sys.argv) != 3:
 
 ctl_file = sys.argv[1]
 dir=sys.argv[2]
-
 ids = {}
 
 files = os.listdir(dir)
@@ -18,12 +17,7 @@ for line in open(ctl_file):
     line = line[:-1]
     ids[line] = True
 
-#files = filter(lambda x: "wv2" in x, files)
-#files = filter(lambda x: "wv1" in x, files)
 files = map(lambda x: x[0:-4], files)
-#files = map(lambda x: x[0:-8], files)
-
-
 file_table = {}
 
 for file in files:
@@ -38,7 +32,6 @@ for id in ids.keys():
         #pass
         print id
 
-#print files_not_found
-#print "%d files in directory"%len(files)
-#print "%d files in ctl file"%len(ids)
-#print "%d files not found"%len(files_not_found)
+print "%d files in directory"%len(files)
+print "%d files in ctl file"%len(ids)
+print "%d files not found"%len(files_not_found)

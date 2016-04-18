@@ -7,7 +7,6 @@ if len(sys.argv) != 3:
     print "Usage: %s <vocab> <master dict>"%sys.argv[0]
     exit(-1)
 
-
 vocab_file = open(sys.argv[1])
 dict_file = open(sys.argv[2])
 
@@ -17,12 +16,9 @@ def remove_alt_pron_marker(str):
     return str
 
 def remove_phoneme_numbers(str):
-    #tokens = str.split()
-    #phones = tokens[1:]
     word, part, phones = str.partition(' ')
     phones = re.sub("\d", "", phones)
     return "%s %s"%(word, phones)
-    
 
 vocab = {}
 vocab_words_found = {}
@@ -40,7 +36,6 @@ for line in dict_file:
         word = tokens[0]
         word = remove_alt_pron_marker(word)
         master_dict_size += 1
-        #if word in vocab:
         if vocab.get(word):
             vocab_words_found[word] = True
             new_dict_size += 1
@@ -53,7 +48,6 @@ sys.stderr.write('New dict size:               %d\n'%new_dict_size)
 vocab_not_in_dict = []
 
 for word in vocab.keys():
-    #if word not in vocab_words_found:
     if not vocab_words_found.get(word):
         vocab_not_in_dict.append(word)
 

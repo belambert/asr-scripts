@@ -11,7 +11,6 @@ if argc != 3 and argc != 4:
 
 count_word_classes = False
 
-
 print_counts = True if sys.argv[2] == "y" else False
 if argc == 4:
     n=int(sys.argv[3])
@@ -25,7 +24,6 @@ counts = collections.defaultdict(int)
 total_count = 0
 
 characters_to_count = ["'", '-','+', '.', '?', ',', '!', '"']
-#characters_to_count = []
 
 dis = ('um',
        'uh',
@@ -55,7 +53,6 @@ dis = ('um',
        #'ooh',
        #'oh',
        )
-
 
 for line in lines:
     tokens = line.split()

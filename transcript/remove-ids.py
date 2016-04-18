@@ -11,12 +11,9 @@ file = sys.argv[1]
 
 for line in open(file):
     line = line[:-1]
-
     first_paren = line.rfind("(")
     trans = line[:first_paren]
     id = line[first_paren:]
-    
     trans = re.sub(' +',' ', trans)
     trans = trans.strip()
-
     print trans

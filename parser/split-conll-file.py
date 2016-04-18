@@ -1,18 +1,13 @@
 #!/usr/bin/python
 
-import sys, math
-
+import sys
+import math
 
 if len(sys.argv) != 2:
     print "Usage: %s <CONLL file>"%os.path.basename(sys.argv[0])
     exit(1)
 
 file = sys.argv[1]
-
-# with open(file) as f:
-#     lines = f.readlines()
-# empty_lines = lines.count("\n")
-# print empty_lines
 
 sentence = []
 sentences = []
@@ -28,8 +23,6 @@ total_count = len(sentences)
 print "Sentences in CONLL file: %d"%total_count
 
 split_point = int(math.ceil(total_count / 2.0))
-#split_point = total_count / 2
-
 
 print split_point
 
@@ -38,7 +31,6 @@ set2 = sentences[split_point:]
 
 print len(set1)
 print len(set2)
-
 
 with open(file+".set1", 'w') as f:
     for sentence in set1:

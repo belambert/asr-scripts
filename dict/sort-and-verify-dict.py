@@ -49,11 +49,9 @@ dict_list.sort(key=lambda x: x[0], cmp=dict_compare)
 for entry in dict_list:
     word = entry[0]
     line = entry[1]
-
     # Make sure we have a pronunciation #0 of it...
     bare_word = remove_alt_pron(word)
     assert dict_table.get(bare_word)
-    
     print line
 
 

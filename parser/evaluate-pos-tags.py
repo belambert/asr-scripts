@@ -1,16 +1,7 @@
 #!/usr/bin/python
-#!/usr/cs/bin/python2.6
-# -*- Mode: Python -*-
-
-
-## Copyright Benjamin E. Lambert, 2005-2011
-## All rights reserved
-## Please contact author regarding licensing and use:
-## ben@benjaminlambert.com
 
 ## TODO: Print confusion matrix...?
 ## Does NLTK have code for evaluating POS tags?
-
 
 import sys
 import re
@@ -70,7 +61,6 @@ def evaluate_pos_tags (reference, hypothesis, verbose=False):
         reference_tokens.extend(ref_tokens)
         hypothesis_tokens.extend(hyp_tokens)
 
-
     print "%s reference tokens; %s hypothesis tokens."%(len(reference_tokens), len(hypothesis_tokens))
     assert (len(reference_tokens) == len(hypothesis_tokens))
     
@@ -110,7 +100,6 @@ def evaluate_pos_tags (reference, hypothesis, verbose=False):
             this_mistakes = map(format_pair_dense, this_mistakes)
             print "%10s   %5.3f   (%6d / %6d)  [%s]"%(pos, acc, pos_correct_count[pos], pos_count[pos],
                                                       ', '.join(map(str, this_mistakes)) )
-
 
 print "Evaluation code loaded... now evaluating using ref %s and hypothesis %s."%(ref_tag_file, hyp_tag_file)
 evaluate_pos_tags(ref_tag_file, hyp_tag_file, verbose=verbose)

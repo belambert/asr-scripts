@@ -5,12 +5,10 @@ import sys
 vocab_file = open(sys.argv[1])
 dict_file = open(sys.argv[2])
 
-
 def remove_alt_pron_marker(str):
     if str[-1] == ')' and str[-3] == '(':
         str = str[:-3]
     return str
-
 
 vocab = {}
 dict = {}
@@ -48,7 +46,6 @@ print "Vocab items not in dict (partial):"
 vocab_not_in_dict = vocab_not_in_dict[0:100]
 for word in vocab_not_in_dict:
     print "     %s"%word
-
 
 print "Dict items not in vocab (partial):"
 dict_not_in_vocab = dict_not_in_vocab[0:100]

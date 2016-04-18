@@ -7,7 +7,6 @@ if len(sys.argv) != 2:
     print "Usage: %s <transcript file>"%os.path.basename(sys.argv[0])
     exit(1)
 
-#remove_punc_p = True
 remove_punc_p = False
 
 with open(sys.argv[1]) as f:

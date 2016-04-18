@@ -19,6 +19,5 @@ for line in open(trans_file):
     pivot = line.rfind("(")
     id = line[pivot+1:-1]
     trans = line[:pivot-1]
-
     if id not in id_table:
         print line

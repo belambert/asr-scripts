@@ -7,10 +7,6 @@ if len(sys.argv) != 2:
     print "Usage: %s <filename>"%sys.argv[0]
 
 file=sys.argv[1]
-
-#id_table = {}
-#trans_table = {}
-
 code_table = collections.defaultdict(int)
 
 for line in open(file):
@@ -35,7 +31,6 @@ for line in open(file):
 
     code_table[code] += 1
 
-#for key in code_table.keys():
 for key in ['c', 's', 'a', 'r', 'o', 'p', 'e', 'z', 'X']:
     sys.stderr.write("%s   %d\n"%(key, code_table[key]))
 

@@ -76,10 +76,8 @@ def has_punctuation_p(str):
     return False
 
 for line in open(filename):
-
     if "[bad_recording]" not in line:
         line = line[:-1]
-
         # Remove backslashes
         line = line.replace("\\", "")
         line = line.replace("<", "")

@@ -24,21 +24,3 @@ for line in open(ctl_file):
     if id_table.get(id):
         print line
         id_used_table[id] = True
-        #else:
-        #sys.stderr.write("CTL ID '%s\' not in ID file.\n"%id)
-        
-    
-# words_not_found = []
-# for word in vocab_table.keys():
-#     if vocab_used_table.get(word):
-#         pass
-#     else:
-#         words_not_found.append(word)
-# words_not_found.sort()
-# for word in words_not_found:
-#     sys.stderr.write("Vocab word '%s\' not in dictionary.\n"%word)
-# sys.stderr.write("%d words not found"%len(words_not_found))
-
-
-
-

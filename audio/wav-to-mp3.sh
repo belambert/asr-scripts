@@ -4,18 +4,14 @@ i=0
 print_interval=100
 
 wav_files=`find ./wsj-wav -name *.wav`
-#total_count=`wc -l $wav_files`
-
+total_count=`wc -l $wav_files`
+echo "Total count: $total_count"
 
 for wav_file in $wav_files; do
 
-    mp3_file=`dirname $wav_file`/`basename $wav_file .wav`.mp3
-
-    #echo $mp3_file
-    
+    mp3_file=`dirname $wav_file`/`basename $wav_file .wav`.mp3    
     if [ ! -f $mp3_file ]; then
         ../../software/bin/lame $wav_file $mp3_file &> /dev/null
-	#../../software/bin/lame $wav_file $mp3_file
     fi
      
     i=$((i+1))

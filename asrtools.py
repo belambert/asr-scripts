@@ -6,9 +6,7 @@ import gzip
 import exceptions
 import editdistance
 
-### THIS IS MOSTLY SPHINX-BASED STUFF
-
-# Nbest stuff
+# This file is mostly for Sphinx
 
 class NBest:
     def __init__(self, sentences=None, header={}):
@@ -89,7 +87,7 @@ def clean_words(words):
     words = map(remove_alt_pron, words)
     return words
 
-# Reference transcripts....
+# Reference transcripts
 
 def read_transcript(filename):
     sentences = []
@@ -112,7 +110,7 @@ def load_reference_transcript(filename):
 def get_reference_transcript(id):
     return reference_transcripts.get(id)
         
-# Displaying stuff....
+# Display
 
 def clear_screen():
     "Write the ANSI code to clear the screen to stdout."

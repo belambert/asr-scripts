@@ -1,5 +1,3 @@
-
-
 (declaim (optimize (debug 3)))
 
 (defun read-ptb-mrg (filename)
@@ -7,10 +5,7 @@
     (with-open-file (f filename)
       (loop for form = (read f nil nil)
 	   while form do
-	   (push form sentences)
-	   ;;(format t "Read ~:D sentences~%" (length sentences))
-	   ;;(pprint form)
-	   ))
+	   (push form sentences)))
     (nreverse sentences)))
 
 (defun count-parens (filename)
@@ -40,8 +35,7 @@
 	     ((funcall test target (car e))
 	      (remove-layer-from-tree target (cdr e) :test test))
 	     (t
-	      (list (remove-layer-from-tree target e :test test)))
-	     )))
+	      (list (remove-layer-from-tree target e :test test))))))
 
 (defun remove-subtree-from-tree (subtree tree)
   (loop for e in tree
@@ -57,26 +51,10 @@
   (with-open-file (s filename :if-exists :supersede :if-does-not-exist :create :direction :output)
     (dolist (tree trees)
       (princ tree s)
-      ;;(prin1 tree s)
-      (terpri s)
-      )))
-
+      (terpri s))))
 
 (defun remove-edited-layers (tree)
   (remove-layer-from-tree 'EDITED tree))
-
-
-;; dis = ('um',
-;;        'uh',
-;;        'mm',
-;;        'ah',
-;;        'er',
-;;        'eh',
-;;        'mhm',
-;;        'hm',
-;;        'ha',
-;;        'huh'
-
 
 (defparameter *disfluency-list*
   '(UM
@@ -104,8 +82,7 @@
   (setf trees (mapcar 'remove-edited-layers trees))
   (setf trees (mapcar 'remove-disfluencies trees))
   (setf trees (remove-if 'null trees))
-  (setf trees (remove '((INTJ)) trees :test 'equalp))
-  )
+  (setf trees (remove '((INTJ)) trees :test 'equalp)))
 
 (defun split-mrg-file (orig file1 file2)
   (let* ((sentences (read-ptb-mrg orig))

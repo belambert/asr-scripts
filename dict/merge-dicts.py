@@ -24,7 +24,6 @@ for dict_file in  dict_files:
                 if pron not in dictionary[word]:
                     dictionary[word].append(pron)
 
-
 for word in sorted(dictionary.keys()):
     prons = dictionary[word]
     for i in range(len(prons)):

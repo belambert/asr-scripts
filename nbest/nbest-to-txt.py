@@ -37,7 +37,6 @@ def clean_words(words):
     words = map(remove_alt_pron, words)
     return words
 
-
 nbest = read_nbest(file)
 
 for line in nbest:
@@ -48,6 +47,3 @@ for line in nbest:
     new_line = ' '.join(words)
     new_line = new_line.lower()
     print new_line
-
-    
-

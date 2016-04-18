@@ -44,7 +44,6 @@ print "IDs to be deleted: %s"%ids_to_delete
 print "IDs to keep: %s"%in_table_count
 print "IDs to delete: %s"%not_in_table_count
 
-
 # Confirm that we want to delete all of these...?!?!
 if bl.ask_ok("OK to delete %d n-best lists?"%not_in_table_count, retries=4, complaint='Yes or no, please!'):
     # Do the actual deletion...

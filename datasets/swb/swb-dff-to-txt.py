@@ -5,16 +5,10 @@ import sys, re
 file = sys.argv[1]
 
 in_header= True
-
 this_line = ""
 
 with open(file) as f:
     string = f.read()
-
-
-#string = re.sub('x.*===\s', '', string, count=1)
-#string = re.sub('x.*\=\=\=\s', '', string, count=1, flags=re.DOTALL)
-#string = re.sub('x.*\=\=\=\s', '', string, re.DOTALL)
 
 # First remove the header
 header_re = re.compile('\*x.*\=\=\=\s', re.DOTALL)
@@ -37,7 +31,6 @@ string = re.sub('-/', '/', string)
 # Remove the double dash: --
 string = re.sub('--', ' ', string)
 # Remove various punctuation marks
-#string = re.sub('[{},\+\?\[\]\.@\(\)#]\"', ' ', string)
 string = re.sub('[{},\+\?\[\]\.@\(\)#]', ' ', string)
 string = string.replace('"', ' ')
 # Remove comments which are between <>
@@ -46,9 +39,7 @@ string = re.sub('<.*?>+', ' ', string)
 
 # And condense all the sequences of spaces to single spaces
 string = re.sub(' +', ' ', string)
-
 string = string.lower()
-
 lines = string.split('/')
 
 # Remove any lines that are empty or are all spaces

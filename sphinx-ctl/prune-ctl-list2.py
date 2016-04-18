@@ -32,6 +32,6 @@ for id in ids.keys():
     else:
         print id
 
-#print "%d files in directory"%len(files)
-#print "%d files in ctl file"%len(ids)
-#print "%d files not found"%len(files_not_found)
+print "%d files in directory"%len(files)
+print "%d files in ctl file"%len(ids)
+print "%d files not found"%len(files_not_found)

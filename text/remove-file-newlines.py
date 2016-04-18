@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-import sys, re
+import sys
+import re
 
 file = sys.argv[1]
 
 with open(file) as f:
     file_string = f.read()
-
 
 file_string = re.sub('\n', ' ', file_string)
 all_tokens = file_string.split()

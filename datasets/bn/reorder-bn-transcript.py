@@ -24,7 +24,6 @@ def remove_alt_pron(str):
     if str[-1] == ')' and str[-3] == '(':
         str = str[:-3]
     return str
-    
 
 # Read the Sphinx file -- try #2
 for line in open(sphinx_file).readlines():
@@ -49,19 +48,4 @@ sphinx_lines.sort(key=lambda x: x[0])
 
 for (id0, id1, id, trans) in sphinx_lines:
     print "%s (%s)"%(trans, id)
-    
-
-
-# We still need to :
-# * Re-order the Sphinx lines
-# * Remove silences and begin/end sentence tokens
-# * Remove disfluencies e.g. {breath} and ++BREATH++
-# * Make the case match
-#
-
-
-# LDC tokens: 1682068
-# Sphinx tokens: 2018391
-# LDC tokens: ["It's", 'a', 'question', 'that', 'will', 'make', 'a', 'lot', 'of', 'Americans']
-# Sphinx tokens: ['<s>', 'JUNIOR', 'HIGH', '<sil>', 'AND', 'HIGH', 'SCHOOL', 'YEARS', '<sil>', '++BREATH++']
 

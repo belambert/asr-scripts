@@ -6,7 +6,6 @@ import string
 import itertools
 
 sphinx_file=sys.argv[1]
-
 sphinx_lines = []
 sphinx_tokens = []
 
@@ -67,8 +66,6 @@ for i in range(len(sphinx_lines)):
         prev_filename = filename
 
 sphinx_lines = filter(lambda x: x != None, sphinx_lines)
-
-#sphinx_tokens = map(lambda x: x[4], sphinx_lines)
 
 for line in sphinx_lines:
     id = line[3]

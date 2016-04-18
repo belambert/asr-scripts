@@ -13,12 +13,12 @@ with open(file2) as f:
 f1tok = dict((x, None) for x in f1str.split())
 f2tok = dict((x, None) for x in f2str.split())
 
-print '*'*40
+print '*' * 40
 for key in f1tok:
     if key not in f2tok:
         print "Token '%s' is not in %s"%(key, file2)
-print '*'*40
+print '*' * 40
 for key in f2tok:
     if key not in f1tok:
         print "Token '%s' is not in %s"%(key, file1)
-print '*'*40
+print '*' * 40

@@ -9,10 +9,8 @@ algs=['2planar', 'covnonproj', 'covproj', 'nivreeager', 'nivrestandard', 'planar
 file_location='/usr0/home/belamber/data/swb-mrg/parser_eval'
 
 train_model_p=False
-#train_model_p=True
 
-#metric='LAS'
-#metric='UAS'
+# Or:'LAS' or 'UAS'
 metric='LA'
 
 os.chdir(file_location)
@@ -47,7 +45,6 @@ for alg in algs:
     eval_file='%s.eval'%parsed_file
     shell_string="java -Xmx2000m -jar ~/software/MaltEval-20081119/lib/MaltEval.jar -g %s -s %s --Metric %s > %s"%(test_file, parsed_file, metric, eval_file)
     output=subprocess.call(shell_string, shell=True)
-    #grep "Row mean" $eval_file
                 
 
 

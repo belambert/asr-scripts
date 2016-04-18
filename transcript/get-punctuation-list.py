@@ -5,7 +5,6 @@ import string
 import blambert_util as bl
 from collections import defaultdict
 
-
 if len(sys.argv) != 2:
     print "Usage: %s <transcript file>"%os.path.basename(sys.argv[0])
     exit(1)
@@ -35,11 +34,6 @@ for line in lines:
         # O/w it's a normal word
         else:
             pass
-
-#for punc, count in punc_table.items():
-#    print "%s  %s" % (punc, count)
-
-
 
 if print_normalized:
     counts = punc_table_normalized.items()

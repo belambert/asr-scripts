@@ -3,7 +3,6 @@
 import sys
 
 file=sys.argv[1]
-
 transcripts = []
 
 for line in open(file):
@@ -12,7 +11,6 @@ for line in open(file):
     trans = line[:pivot]
     id = line[pivot+1:-1]
     transcripts.append([line, trans, id])
-
 
 transcripts.sort(key=lambda x: x[2])
 

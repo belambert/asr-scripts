@@ -7,7 +7,6 @@ import re
 file = sys.argv[1]
 
 remove_periods_p = True
-#remove_periods_p = False
 
 for line in open(file):
     line = line[:-1]

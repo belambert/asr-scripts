@@ -18,7 +18,6 @@ vocab_used_table = {}
 for word in vocab:
     vocab_table[word] = True
 
-
 def remove_alt_pron(str):
     if str[-1] == ')' and str[-3] == '(':
         str = str[:-3]
@@ -33,9 +32,6 @@ for line in open(dict_file):
     if vocab_table.get(true_word):
         print line
         vocab_used_table[true_word] = True
-        #else:
-        #sys.stderr.write("Vocab word '%s\' not in dictionary.\n"%word)
-    
 
 words_not_found = []
 
@@ -50,9 +46,4 @@ words_not_found.sort()
 for word in words_not_found:
     sys.stderr.write("Vocab word '%s\' not in dictionary.\n"%word)
 
-
 sys.stderr.write("%d words not found"%len(words_not_found))
-
-
-
-

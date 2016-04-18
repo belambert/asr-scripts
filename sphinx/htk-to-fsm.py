@@ -10,5 +10,3 @@ basename=$dirname/`basename $file .htk.lat`
 
 lattice-tool -read-htk -in-lattice $file -out-lattice $basename.pfsg.lat
 pfsg-to-fsm symbolfile=$basename.syms $basename.pfsg.lat > $basename.fsm.lat
-
-#rm $basename.pfsg.lat

@@ -96,16 +96,7 @@ sphinx_lines = filter(lambda x: x != None, sphinx_lines)
 
 print "AFTER: %d"%len(sphinx_lines)
 
-#quit()
-
-# sphinx_filenames = map(lambda x: x[0], sphinx_lines)
-# sphinx_filenames = list(set(sphinx_filenames))
-# sphinx_filenames.sort()
-# print sphinx_filenames
-# quit()
-
 sphinx_tokens = map(lambda x: x[4], sphinx_lines)
-#sphinx_tokens = sum(sphinx_lines, [])
 print sphinx_tokens[0:10]
 sphinx_tokens = list(itertools.chain(*sphinx_tokens))
 
@@ -130,12 +121,8 @@ error_token = None
 ldc_index = 0
 sphinx_index = 0
 
-#count_limit = 300000
-#count_limit = 1505962
 count_limit = 1597896
 non_match_limit = 5000
-#for sphinx_index in range(0,len(sphinx_tokens)):
-#for sphinx_index in range(0,1000):
 sphinx_total = len(sphinx_tokens)
 while ldc_index < count_limit:
     sphinx_token = sphinx_tokens[sphinx_index]
@@ -164,12 +151,3 @@ while ldc_index < count_limit:
 
 print "LDC index:    %d"%ldc_index
 print "Sphinx index: %d"%sphinx_index
-
-# if error_token:
-#     for i in range(error_token - 10, error_token + 10):
-#         if i == error_token:
-#             print "***%3d LDC: %20s Sphinx: %20s***"%(i, ldc_tokens[i], sphinx_tokens[i])
-#         else:
-#             print "   %3d LDC: %20s Sphinx: %20s"%(i, ldc_tokens[i], sphinx_tokens[i])
-
-

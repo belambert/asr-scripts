@@ -6,6 +6,8 @@ import gzip
 import exceptions
 import editdistance
 
+### THIS IS MOSTLY SPHINX-BASED STUFF
+
 # Nbest stuff
 
 class NBest:
